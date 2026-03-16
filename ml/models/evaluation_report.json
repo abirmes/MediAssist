@@ -1,0 +1,28 @@
+{
+  "best_model": "GradientBoosting",
+  "accuracy": 0.7701863354037267,
+  "cv_score": 0.7863354037267081,
+  "classes": [
+    "medecin",
+    "surveillance",
+    "urgences"
+  ],
+  "n_features": 1326,
+  "n_train": 644,
+  "n_test": 161,
+  "n_diseases": 391,
+  "models_compared": {
+    "RandomForest": {
+      "accuracy": 0.7204968944099379,
+      "cv": 0.7627329192546585
+    },
+    "GradientBoosting": {
+      "accuracy": 0.7701863354037267,
+      "cv": 0.7863354037267081
+    },
+    "LogisticRegression": {
+      "accuracy": 0.8012422360248447,
+      "cv": 0.7813664596273292
+    }
+  }
+}
