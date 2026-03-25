@@ -11,8 +11,6 @@ build/
 .env
 
 
-ml/models/*.joblib
-
 ml/data/raw/*.csv
 ml/data/processed/*.csv
 

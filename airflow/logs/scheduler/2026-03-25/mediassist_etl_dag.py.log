@@ -4163,3 +4163,136 @@
 [2026-03-25T16:06:37.039+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:06:37.038+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2026-03-25T16:06:37.077+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:06:37.076+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
 [2026-03-25T16:06:37.112+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.231 seconds
+[2026-03-25T16:07:07.399+0000] {processor.py:161} INFO - Started process (PID=2648) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:07:07.401+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:07:07.403+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:07:07.403+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:07:07.468+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:07:07.525+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:07:07.525+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:07:07.557+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:07:07.557+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:07:07.594+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.202 seconds
+[2026-03-25T16:07:37.722+0000] {processor.py:161} INFO - Started process (PID=2653) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:07:37.724+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:07:37.727+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:07:37.727+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:07:37.783+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:07:37.839+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:07:37.839+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:07:37.869+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:07:37.869+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:07:37.898+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.184 seconds
+[2026-03-25T16:08:08.250+0000] {processor.py:161} INFO - Started process (PID=2658) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:08:08.252+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:08:08.253+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:08:08.253+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:08:08.304+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:08:08.354+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:08:08.354+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:08:08.383+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:08:08.382+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:08:08.418+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.174 seconds
+[2026-03-25T16:08:38.555+0000] {processor.py:161} INFO - Started process (PID=2663) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:08:38.557+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:08:38.560+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:08:38.560+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:08:38.615+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:08:38.683+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:08:38.682+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:08:38.730+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:08:38.729+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:08:38.770+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.223 seconds
+[2026-03-25T16:09:08.991+0000] {processor.py:161} INFO - Started process (PID=2668) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:09:08.994+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:09:08.997+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:09:08.996+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:09:09.061+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:09:09.119+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:09:09.118+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:09:09.154+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:09:09.153+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:09:09.187+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.203 seconds
+[2026-03-25T16:09:39.371+0000] {processor.py:161} INFO - Started process (PID=2673) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:09:39.378+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:09:39.380+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:09:39.379+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:09:39.431+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:09:39.495+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:09:39.495+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:09:39.541+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:09:39.540+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:09:39.581+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.221 seconds
+[2026-03-25T16:10:09.882+0000] {processor.py:161} INFO - Started process (PID=2678) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:10:09.885+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:10:09.887+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:10:09.886+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:10:09.956+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:10:10.009+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:10:10.008+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:10:10.041+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:10:10.041+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:10:10.074+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.199 seconds
+[2026-03-25T16:10:40.255+0000] {processor.py:161} INFO - Started process (PID=2683) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:10:40.257+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:10:40.259+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:10:40.258+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:10:40.321+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:10:40.383+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:10:40.382+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:10:40.425+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:10:40.425+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:10:40.478+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.229 seconds
+[2026-03-25T16:11:10.701+0000] {processor.py:161} INFO - Started process (PID=2688) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:11:10.703+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:11:10.705+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:11:10.704+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:11:10.756+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:11:10.807+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:11:10.807+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:11:10.846+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:11:10.845+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:11:10.883+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.187 seconds
+[2026-03-25T16:11:41.084+0000] {processor.py:161} INFO - Started process (PID=2693) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:11:41.087+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:11:41.090+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:11:41.090+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:11:41.159+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:11:41.212+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:11:41.212+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:11:41.241+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:11:41.240+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:11:41.267+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.192 seconds
+[2026-03-25T16:12:11.440+0000] {processor.py:161} INFO - Started process (PID=2698) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:12:11.443+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:12:11.445+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:12:11.445+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:12:11.494+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:12:11.547+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:12:11.547+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:12:11.580+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:12:11.579+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:12:11.613+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.179 seconds
+[2026-03-25T16:12:41.852+0000] {processor.py:161} INFO - Started process (PID=2703) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:12:41.854+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:12:41.856+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:12:41.856+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:12:41.922+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:12:41.985+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:12:41.984+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:12:42.024+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:12:42.023+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:12:42.061+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.216 seconds
+[2026-03-25T16:13:12.177+0000] {processor.py:161} INFO - Started process (PID=2708) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:13:12.179+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:13:12.180+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:13:12.179+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:13:12.222+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:13:12.259+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:13:12.258+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:13:12.296+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:13:12.295+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:13:12.320+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.149 seconds
+[2026-03-25T16:13:42.501+0000] {processor.py:161} INFO - Started process (PID=2713) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:13:42.503+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:13:42.505+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:13:42.504+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:13:42.554+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:13:42.605+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:13:42.604+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:13:42.646+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:13:42.646+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:13:42.682+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.186 seconds
+[2026-03-25T16:14:12.909+0000] {processor.py:161} INFO - Started process (PID=2718) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:14:12.912+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:14:12.915+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:14:12.914+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:14:12.971+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:14:13.038+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:14:13.038+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:14:13.080+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:14:13.079+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:14:13.110+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.208 seconds
+[2026-03-25T16:14:43.293+0000] {processor.py:161} INFO - Started process (PID=2723) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:14:43.295+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:14:43.298+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:14:43.297+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:14:43.356+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:14:43.412+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:14:43.412+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:14:43.448+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:14:43.448+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:14:43.482+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.195 seconds
+[2026-03-25T16:15:13.729+0000] {processor.py:161} INFO - Started process (PID=2728) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:15:13.732+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:15:13.734+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:15:13.733+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:15:13.797+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:15:13.856+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:15:13.855+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:15:13.893+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:15:13.893+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:15:13.928+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.206 seconds
+[2026-03-25T16:15:44.104+0000] {processor.py:161} INFO - Started process (PID=2733) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:15:44.107+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:15:44.109+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:15:44.108+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:15:44.162+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:15:44.225+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:15:44.224+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:15:44.267+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:15:44.266+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:15:44.331+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.235 seconds
+[2026-03-25T16:16:14.503+0000] {processor.py:161} INFO - Started process (PID=2738) to work on /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:16:14.506+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mediassist_etl_dag.py for tasks to queue
+[2026-03-25T16:16:14.509+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:16:14.509+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:16:14.577+0000] {processor.py:840} INFO - DAG(s) 'mediassist_pipeline' retrieved from /opt/airflow/dags/mediassist_etl_dag.py
+[2026-03-25T16:16:14.639+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:16:14.639+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-25T16:16:14.678+0000] {logging_mixin.py:188} INFO - [2026-03-25T16:16:14.678+0000] {dag.py:3823} INFO - Setting next_dagrun for mediassist_pipeline to 2026-03-29 02:00:00+00:00, run_after=2026-04-05 02:00:00+00:00
+[2026-03-25T16:16:14.722+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mediassist_etl_dag.py took 0.227 seconds

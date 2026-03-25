@@ -77,11 +77,6 @@ jobs:
           pip install -r backend/requirements.txt
           pip install pytest pytest-cov httpx
 
-      - name: Run Migrations / Init DB
-        run: |
-          cd backend
-          python -c "from database import engine; from models import user, consultation; user.Base.metadata.create_all(bind=engine)"
-
       - name: Run tests with coverage
         run: |
           cd backend
