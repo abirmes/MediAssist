@@ -8,6 +8,8 @@ from services.auth_service import get_current_user
 from services.ml_service import predict_orientation
 from services.chat_service import generate_explanation
 from typing import List
+from services.metrics_service import track_prediction
+
 
 router = APIRouter(prefix="/analysis", tags=["Analysis"])
 
@@ -37,6 +39,10 @@ def analyze_symptoms(
 
     # Prédiction ML
     ml_result = predict_orientation(data.symptoms)
+    track_prediction(
+    orientation=ml_result["orientation"],
+    severity_score=ml_result["severity_score"]
+)
 
     # Génération explication via Groq
     try:

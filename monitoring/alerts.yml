@@ -1,0 +1,34 @@
+groups:
+  - name: mediassist_alerts
+    rules:
+      - alert: BackendDown
+        expr: up{job="mediassist-backend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Backend MediAssist inaccessible"
+
+      - alert: HighErrorRate
+        expr: rate(mediassist_http_requests_total{status_code=~"5.."}[5m]) > 0.1
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Taux d'erreurs HTTP élevé"
+
+      - alert: ModelAccuracyLow
+        expr: mediassist_model_accuracy < 0.70
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Accuracy du modèle ML en dessous du seuil (70%)"
+
+      - alert: HighLatency
+        expr: rate(mediassist_http_request_duration_seconds_sum[5m]) / rate(mediassist_http_request_duration_seconds_count[5m]) > 2
+        for: 3m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Latence API élevée (> 2s)"

@@ -10,7 +10,6 @@ def get_groq_client():
 
 def generate_medical_question(conversation_history: list,
                                question_number: int) -> str:
-    """Génère une question médicale contextuelle via Groq."""
     client = get_groq_client()
 
     system_prompt = """You are a medical assistant helping to assess a patient's symptoms.
@@ -18,7 +17,7 @@ Ask targeted medical questions in French to better understand the patient's cond
 Questions should be about: duration, intensity (1-10), fever, location, associated symptoms.
 Be empathetic and clear. Ask ONE question at a time.
 IMPORTANT: Always add this disclaimer at the end of your responses:
-'⚠️ Je ne suis pas un médecin. Consultez un professionnel de santé.'"""
+'Je ne suis pas un médecin. Consultez un professionnel de santé.'"""
 
     messages = [{"role": "system", "content": system_prompt}]
 

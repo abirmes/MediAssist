@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import API from '../api'
 import Navbar from '../components/Navbar'
 import ResultCard from '../components/ResultCard'
+import { useChat } from '../contexts/ChatContext'
 
 export default function Analyze() {
-    const navigate = useNavigate()
     const [symptoms, setSymptoms] = useState([])
     const [selected, setSelected] = useState([])
     const [search, setSearch] = useState('')
     const [result, setResult] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
+
+    const { initializeChat } = useChat()
 
     useEffect(() => {
         API.get('/analysis/symptoms')
@@ -40,8 +41,9 @@ export default function Analyze() {
         try {
             const r = await API.post('/analysis/analyze', { symptoms: selected })
             setResult(r.data)
+            initializeChat(r.data, selected)
         } catch {
-            setError('Erreur lors de l\'analyse')
+            setError("Erreur lors de l'analyse")
         } finally {
             setLoading(false)
         }
@@ -52,7 +54,6 @@ export default function Analyze() {
             <Navbar />
             <div className="max-w-4xl mx-auto px-4 py-8">
 
-                {/* Header */}
                 <div className="mb-8">
                     <h1 className="font-display text-3xl font-bold text-slate-900">
                         Analyse des symptômes
@@ -63,26 +64,24 @@ export default function Analyze() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    {/* Sélection symptômes */}
+
                     <div className="card">
                         <h2 className="font-semibold text-slate-800 mb-4">
                             Symptômes disponibles
                         </h2>
-
                         <input
                             type="text" value={search}
                             onChange={e => setSearch(e.target.value)}
                             placeholder="Rechercher un symptôme..."
                             className="input mb-4"
                         />
-
                         <div className="h-80 overflow-y-auto space-y-1 pr-1">
                             {filtered.map(sym => (
                                 <button
                                     key={sym}
                                     onClick={() => toggle(sym)}
                                     className={`w-full text-left px-3 py-2 rounded-lg text-sm
-                              transition-all duration-150 ${selected.includes(sym)
+                                        transition-all duration-150 ${selected.includes(sym)
                                             ? 'bg-medical-100 text-medical-700 font-medium'
                                             : 'hover:bg-slate-100 text-slate-700'
                                         }`}
@@ -98,7 +97,6 @@ export default function Analyze() {
                         </div>
                     </div>
 
-                    {/* Symptômes sélectionnés */}
                     <div className="space-y-4">
                         <div className="card">
                             <h2 className="font-semibold text-slate-800 mb-4">
@@ -112,33 +110,26 @@ export default function Analyze() {
                             ) : (
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {selected.map(sym => (
-                                        <span
-                                            key={sym}
+                                        <span key={sym}
                                             className="inline-flex items-center gap-1 bg-medical-100
-                                 text-medical-700 text-sm px-3 py-1 rounded-full"
-                                        >
+                                                text-medical-700 text-sm px-3 py-1 rounded-full">
                                             {sym}
-                                            <button
-                                                onClick={() => toggle(sym)}
-                                                className="hover:text-red-500 ml-1 font-bold"
-                                            >×</button>
+                                            <button onClick={() => toggle(sym)}
+                                                className="hover:text-red-500 ml-1 font-bold">×</button>
                                         </span>
                                     ))}
                                 </div>
                             )}
 
                             {error && (
-                                <div className="bg-red-50 text-red-600 rounded-xl px-4 py-3
-                                text-sm mb-4">
+                                <div className="bg-red-50 text-red-600 rounded-xl px-4 py-3 text-sm mb-4">
                                     {error}
                                 </div>
                             )}
 
-                            <button
-                                onClick={analyze}
+                            <button onClick={analyze}
                                 disabled={loading || selected.length === 0}
-                                className="btn-primary w-full"
-                            >
+                                className="btn-primary w-full">
                                 {loading ? (
                                     <span className="flex items-center justify-center gap-2">
                                         <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
@@ -153,8 +144,19 @@ export default function Analyze() {
                             </button>
                         </div>
 
-                        {/* Résultat */}
-                        {result && <ResultCard result={result} />}
+                        {result && (
+                            <>
+                                <ResultCard result={result} />
+                                <div className="bg-medical-50 border border-medical-200
+                                    rounded-xl px-4 py-3 flex items-center gap-3">
+                                    <span className="text-xl">💬</span>
+                                    <p className="text-medical-700 text-sm">
+                                        L'assistant a analysé vos résultats.
+                                        <strong> Cliquez sur le bouton chat</strong> en bas à droite !
+                                    </p>
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>

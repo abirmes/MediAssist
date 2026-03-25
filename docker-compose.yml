@@ -1,6 +1,29 @@
 version: '3.8'
 
+x-airflow-common: &airflow-common
+  image: apache/airflow:2.8.1
+  environment:
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+    AIRFLOW__CORE__FERNET_KEY: ""
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__API__AUTH_BACKENDS: "airflow.api.auth.backend.basic_auth"
+    MEDIASSIST_BASE_DIR: /opt/airflow/ml
+    GROQ_API_KEY: ${GROQ_API_KEY}
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/logs:/opt/airflow/logs
+    - ./airflow/plugins:/opt/airflow/plugins
+    - ./ml:/opt/airflow/ml
+  depends_on:
+    airflow-db:
+      condition: service_healthy
+  networks:
+    - mediassist-net
+
 services:
+
   db:
     image: postgres:15
     environment:
@@ -16,6 +39,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - mediassist-net
 
   backend:
     build: .
@@ -32,6 +57,9 @@ services:
     volumes:
       - ./ml/models:/app/ml/models
       - ./ml/data:/app/ml/data
+      - mlruns_data:/app/mlruns
+    networks:
+      - mediassist-net
 
   mlflow:
     image: python:3.11-slim
@@ -39,20 +67,124 @@ services:
       bash -c "pip install mlflow && mlflow server
       --host 0.0.0.0
       --port 5000
-      --backend-store-uri sqlite:///mlflow.db
+      --backend-store-uri sqlite:////mlruns/mlflow.db
       --default-artifact-root /mlartifacts"
     ports:
       - "5000:5000"
     volumes:
       - mlflow_data:/mlartifacts
+      - mlruns_data:/mlruns
+    networks:
+      - mediassist-net
 
-  # prometheus:
-  #   image: prom/prometheus
-  #   ports:
-  #     - "9090:9090"
-  #   volumes:
-  #     - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+  airflow-db:
+    image: postgres:15
+    container_name: mediassist-airflow-db
+    environment:
+      POSTGRES_DB: airflow
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+    volumes:
+      - airflow_db_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - mediassist-net
+
+  airflow-init:
+    <<: *airflow-common
+    container_name: mediassist-airflow-init
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        pip install scikit-learn pandas numpy joblib groq \
+                    langchain langchain-community langchain-huggingface \
+                    chromadb sentence-transformers -q
+        airflow db migrate
+        airflow users create \
+          --username admin \
+          --password admin \
+          --firstname Abir \
+          --lastname Meskini \
+          --role Admin \
+          --email abir@mediassist.ai || true
+        echo "✅ Airflow initialisé"
+    restart: "no"
+
+  airflow-webserver:
+    <<: *airflow-common
+    container_name: mediassist-airflow-webserver
+    command: webserver
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: always
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-scheduler:
+    <<: *airflow-common
+    container_name: mediassist-airflow-scheduler
+    command: scheduler
+    restart: always
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: mediassist-prometheus
+    restart: unless-stopped
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./monitoring/alerts.yml:/etc/prometheus/alerts.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.enable-lifecycle"
+    ports:
+      - "9090:9090"
+    networks:
+      - mediassist-net
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: mediassist-grafana
+    restart: unless-stopped
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboard.json:/var/lib/grafana/dashboards/mediassist.json:ro
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+    ports:
+      - "3001:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - mediassist-net
 
 volumes:
   postgres_data:
   mlflow_data:
+  mlruns_data:
+  airflow_db_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  mediassist-net:
+    driver: bridge
