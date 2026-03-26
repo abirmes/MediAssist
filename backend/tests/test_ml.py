@@ -1,12 +1,9 @@
-"""
-Tests unitaires — Modèle ML
-"""
+
 import pytest
 import numpy as np
 
 
 def test_ml_service_predict():
-    """Test service ML complet avec mock."""
     from services.ml_service import predict_orientation
     result = predict_orientation(["chest pain", "sweating"])
     assert "orientation"    in result
