@@ -117,3 +117,6 @@ def get_default_explanation(orientation: str) -> str:
         )
     }
     return messages.get(orientation, messages["medecin"])
+
+
+

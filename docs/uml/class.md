@@ -5,7 +5,7 @@ class User {
     +int id
     +string email
     +string hashed_password
-    +string role
+    +string rolePush Docker HubPush Docker Hub
     +datetime created_at
     +register()
     +login()

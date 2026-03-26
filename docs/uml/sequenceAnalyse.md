@@ -3,7 +3,7 @@ sequenceDiagram
     actor U as Utilisateur
     participant F as Frontend (Streamlit)
     participant A as API (FastAPI)
-    participant NLP as Service NLP (spaCy)
+    participant Service 
     participant ML as Modèle ML (Random Forest)
     participant LLM as Groq LLM
     participant DB as Base de données
